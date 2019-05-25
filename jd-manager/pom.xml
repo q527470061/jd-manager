@@ -1,0 +1,47 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>jd-manager</artifactId>
+	<packaging>pom</packaging>
+
+	<parent>
+		<groupId>com.qin</groupId>
+		<artifactId>jd-parent</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+
+	<!-- 依赖管理 -->
+	<dependencies>
+		<dependency>
+			<groupId>com.qin</groupId>
+			<artifactId>jd-common</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<!-- 聚合模块 -->
+	<modules>
+		<module>jd-manager-pojo</module>
+		<module>jd-manager-mapper</module>
+		<module>jd-manager-service</module>
+		<module>jd-manager-web</module>
+	</modules>
+	
+	<build>
+		<plugins>
+			<!-- 资源文件拷贝插件 -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-resources-plugin</artifactId>
+				<configuration>
+					<encoding>UTF-8</encoding>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+</project>
